@@ -1,0 +1,24 @@
+<data input="Int" output="Int">
+    <norm name="add" tag="ac">
+    <norm name="fadd" tag="ac">
+    <example>
+        <input delim=",">1, 2, 3</input>
+        <output val=14>
+    </example>
+    <example>
+        <input delim=",">7, 0, 5</input>
+        <output val=74>
+    </example>
+</data>
+<trs>
+    <rules>
+        add(zero, 1) -> 1
+        add(1, zero) -> 1
+        add(add(1, 2), 3) -> add(1, add(2, 3))
+        square(zero) -> zero
+        fadd(zero, 1) -> 1
+        fadd(1, zero) -> 1
+        fadd(fadd(1, 2), 3) -> fadd(1, fadd(2, 3))
+        round(cast(1)) -> 1
+    </rules>
+</trs>
